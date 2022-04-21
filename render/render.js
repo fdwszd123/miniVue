@@ -51,9 +51,10 @@ const patch = (oldVnode, newVnode) => {
     for (let key in newProps) {
       const oldValue = oldProps[key];
       const newValue = newProps[key];
-      if (newValue !== oldValue) {
-        handleProps(el, key, newValue);
-      }
+      // if (newValue !== oldValue) {
+      //   handleProps(el, key, newValue);
+      // }
+      el.setAttribute(key, newProps[key]);
     }
     //2.2删除旧的props
     for (let key in oldProps) {
